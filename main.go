@@ -51,7 +51,6 @@ func main() {
 		AllowMethods: []string{"GET", "POST", "OPTIONS"},
 		AllowHeaders: []string{"Content-Type", "Origin"},
 	}))
-	r.GET("/users", controllers.AllUsers)
 	r.POST("/user/login", controllers.Login)
 	r.POST("/user/register", controllers.Register)
 	r.POST("/user/checktoken", controllers.CheckToken)
