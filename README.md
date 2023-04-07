@@ -27,4 +27,4 @@ and `git push --set-upstream origin main`.
 To start the Backend, do `go run main.go`.
 
 ### Updating
-To update the LMCApi you just need to do `git pull lmcapi`.
+To update the LMCApi you just need to do `git pull lmcapi main --rebase`,  `git pull --rebase` and `git push`.
