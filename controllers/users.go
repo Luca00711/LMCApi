@@ -14,11 +14,6 @@ import (
 	"time"
 )
 
-type CreateBookInput struct {
-	Title  string `json:"title" binding:"required"`
-	Author string `json:"author" binding:"required"`
-}
-
 type LoginInput struct {
 	Email    string `json:"email" binding:"required"`
 	Password string `json:"password" binding:"required"`
@@ -37,27 +32,6 @@ type CheckTokenInput struct {
 type CheckUuidInput struct {
 	Uuid  string `json:"uuid" binding:"required"`
 	Token string `json:"token" binding:"required"`
-}
-
-type UpdateBookInput struct {
-	Title  string `json:"title"`
-	Author string `json:"author"`
-}
-
-// AllUsers GET /users
-// Find all users
-func AllUsers(c *gin.Context) {
-	var users []models.User
-	models.DB.Find(&users)
-	if len(users) == 0 {
-		c.JSON(http.StatusOK, gin.H{"success": false})
-		return
-	}
-	for i, user := range users {
-		user.Password = ""
-		users[i] = user
-	}
-	c.JSON(http.StatusOK, gin.H{"users": users, "success": true})
 }
 
 // Login POST /user/login
