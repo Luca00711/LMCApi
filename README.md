@@ -25,3 +25,6 @@ Now you should do an initial commit with `git add .`, `git commit -m "Initial co
 and `git push --set-upstream origin main`.
 
 To start the Backend, do `go run main.go`.
+
+### Updating
+To update the LMCApi you just need to do `git pull lmcapi`.
