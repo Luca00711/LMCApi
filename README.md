@@ -6,6 +6,8 @@
 - Easy to add custom Routes
 
 ### Get Started
+**Make sure you run the backend behind a reverse proxy,
+because the auth system rely on the header `X-Forwarded-For`.**
 
 To get started,
 clone this repository with `git clone https://github.com/Luca00711/LMCApi.git`
@@ -24,7 +26,7 @@ and change the variables to your project data.
 Now you should do an initial commit with `git add .`, `git commit -m "Initial commit"`
 and `git push --set-upstream origin main`.
 
-To start the Backend, do `go run main.go`.
+To start the backend, do `go run main.go`.
 
 ### Updating
 To update the LMCApi, you just need to do `git pull lmcapi main --rebase`,  `git pull --rebase` and `git push`.
