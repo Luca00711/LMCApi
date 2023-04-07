@@ -6,6 +6,7 @@
 - Easy to add custom Routes
 
 ### Get Started
+#### Please note that this is only a hobby project.
 **The backend runs with the current version only with PostgreSQL,
 in the future other databases will follow.**
 
