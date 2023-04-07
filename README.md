@@ -6,6 +6,9 @@
 - Easy to add custom Routes
 
 ### Get Started
+**The backend runs with the current version only with PostgreSQL,
+in the future other databases will follow.**
+
 **Make sure you run the backend behind a reverse proxy,
 because the auth system rely on the header `X-Forwarded-For`.**
 
