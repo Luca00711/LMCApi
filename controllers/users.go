@@ -52,7 +52,7 @@ func Login(c *gin.Context) {
 	token := makeToken(ip)
 	token.User = user
 	if err := models.DB.Create(&token).Error; err != nil {
-		if strings.Contains(err.Error(), "duplicated key not allowed") {
+		if strings.Contains(err.Error(), "duplicate key value violates unique constraint") {
 			var tokenDb models.Token
 			models.DB.Where("user_id = ?", user.ID).First(&tokenDb)
 			models.DB.Delete(&tokenDb)
@@ -79,7 +79,7 @@ func Register(c *gin.Context) {
 	user.Balance = 0.0
 	user.SupportCode = makeKey()
 	if err := models.DB.Create(&user).Error; err != nil {
-		if strings.Contains(err.Error(), "duplicated key not allowed") {
+		if strings.Contains(err.Error(), "duplicate key value violates unique constraint") {
 			c.JSON(http.StatusOK, gin.H{"success": false})
 			return
 		}
@@ -88,7 +88,7 @@ func Register(c *gin.Context) {
 	token := makeToken(ip)
 	token.User = user
 	if err := models.DB.Create(&token).Error; err != nil {
-		if strings.Contains(err.Error(), "duplicated key not allowed") {
+		if strings.Contains(err.Error(), "duplicate key value violates unique constraint") {
 			var tokenDb models.Token
 			models.DB.Where("user_id = ?", user.ID).First(&tokenDb)
 			models.DB.Delete(&tokenDb)
